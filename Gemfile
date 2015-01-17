@@ -21,6 +21,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 
+gem 'active_model_serializers'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'factory_girl_rails'
