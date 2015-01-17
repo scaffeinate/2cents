@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-  :recoverable, :confirmable, :rememberable, :trackable, :validatable
+    :recoverable, :confirmable, :rememberable, :trackable, :validatable
 
   devise :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
@@ -11,13 +11,17 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-      user.first_name = auth.info.first_name
-      user.last_name = auth.info.last_name
-      user.remote_avatar_url = auth.info.image.gsub('http://','https://')
+  has_many :authentications
+
+  def self.find_for_oauth(auth)
+    registered_user = User.where(:email => auth.info.email).first
+    if registered_user
+      return registered_user
+    else
+      user = User.new(first_name: auth.info.first_name, last_name: auth.info.last_name, email: auth.info.email,
+                      password: Devise.friendly_token[0,20], remote_avatar_url: auth.info.image.gsub('http://','https://'))
+      user.skip_confirmation!
+      user.save
     end
   end
 
