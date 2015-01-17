@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
     :recoverable, :confirmable, :rememberable, :trackable, :validatable
 
+  devise :omniauthable, :omniauth_providers => [:facebook]
+
   validates :first_name, presence: true, length: { maximum: 100 }
   validates :last_name, presence: true, length: { maximum: 100 }
 
