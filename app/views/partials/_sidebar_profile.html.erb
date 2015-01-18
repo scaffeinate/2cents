@@ -1,10 +1,28 @@
-<%= link_to user_path(current_user) do %>
-  <%= render 'partials/avatar', user: current_user, klass: 'avatar' %>
-<% end %>
-<ul>
-  <li><%= link_to '2 cents', user_path(current_user) %></li>
-  <li><%= link_to 'Favorites', favorites_user_path(current_user) %></li>
-  <li><%= link_to 'Upvotes', upvotes_user_path(current_user) %></li>
-  <li><%= link_to 'Downvotes', downvotes_user_path(current_user) %></li>
-  <li><%= link_to 'Location', root_path %></li>
-</ul>
+<div class="col-md-2">
+  <center>
+    <%= link_to user_path(current_user) do %>
+      <%= render 'partials/avatar', user: current_user, klass: 'avatar' %>
+    <% end %>
+    <div class="caption">
+      <h5><%= "#{current_user.first_name} #{current_user.last_name}" %></h5>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="badge"><%= current_user.posts_count %></span>
+          <%= link_to '2 cents', user_path(current_user) %>
+        </li>
+        <li class="list-group-item">
+          <span class="badge"><%= current_user.favorites_count %></span>
+          <%= link_to 'Favorites', favorites_user_path(current_user) %>
+        </li>
+        <li class="list-group-item">
+          <span class="badge"><%= current_user.upvotes_count %></span>
+          <%= link_to 'Upvotes', upvotes_user_path(current_user) %>
+        </li>
+        <li class="list-group-item">
+          <span class="badge"><%= current_user.downvotes_count %></span>
+          <%= link_to 'Downvotes', downvotes_user_path(current_user) %>
+        </li>
+      </ul>
+    </div>
+  </center>
+</div>

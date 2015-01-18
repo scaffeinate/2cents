@@ -1,11 +1,1 @@
-<% if user_signed_in? %>
-  <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-<% end %>
-<%= render 'partials/sidebar_profile' %>
-<%= render 'partials/new_post' %>
-<div id="feed" class="well">
-  <%= render(@posts) || 'no posts' %>
-</div>
-<div id="load-more">
-  <%= render 'partials/load_more', items: @posts %>
-</div>
+<%= render 'home/feed', type: 'home' %>

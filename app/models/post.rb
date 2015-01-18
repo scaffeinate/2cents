@@ -1,12 +1,12 @@
 class Post < ActiveRecord::Base
 
-  self.per_page = 20
+  self.per_page = 4
 
   validates :content, presence: true, length: { maximum: 240 }
   validates :location, presence: true
   validates :user, presence: true
 
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   has_many :upvotes
   has_many :downvotes
   has_many :favorites

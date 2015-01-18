@@ -1,0 +1,3 @@
+<%= form_tag comment_path(comment), method: :delete, remote: true do %>
+  <%= button_tag "<span class='glyphicon glyphicon-trash'></span>".html_safe, class: 'btn btn-default' %>
+<% end %>

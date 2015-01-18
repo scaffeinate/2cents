@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :email, :username, :password, :password_confirmation]
-    devise_parameter_sanitizer.for(:sign_in) << [:email, :remember_me]
+    devise_parameter_sanitizer.for(:sign_in) << [:login, :username, :remember_me]
   end
 
   def after_sign_in_path_for(resource)

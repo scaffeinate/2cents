@@ -1,0 +1,263 @@
+.bootstrap-tagsinput {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  display: inline-block;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  color: #555;
+  vertical-align: middle;
+  border-radius: 4px;
+  max-width: 100%;
+  line-height: 22px;
+  cursor: text;
+}
+.bootstrap-tagsinput input {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  width: auto !important;
+  max-width: inherit;
+}
+.bootstrap-tagsinput input:focus {
+  border: none;
+  box-shadow: none;
+}
+.bootstrap-tagsinput .tag {
+  margin-right: 2px;
+  color: white;
+}
+.bootstrap-tagsinput .tag [data-role="remove"] {
+  margin-left: 8px;
+  cursor: pointer;
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:after {
+  content: "x";
+  padding: 0px 2px;
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:hover:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.alert-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-left: 40%;
+  margin-top: 10px;
+  width: 300px;
+  z-index: 10000;
+  text-align: center;
+  padding: 5px 25px;
+}
+
+.page-content {
+  margin-top: 75px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.post {
+  padding: 5px 15px;
+  .btn {
+    background: transparent;
+    border: none;
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    };
+  }
+
+  .active {
+    color: #428bca;
+    box-shadow: none;
+  }
+}
+
+.avatar-sm {
+  width: 45px;
+  height: 45px;
+}
+
+.login-page{
+	background-color: rgba(42,64,80,0.6);
+	border: 0px;
+}
+
+.logo-google{
+  background: image-url("googleplus.png") no-repeat scroll center center transparent;
+  border-right: 1px solid #E5767B;
+  float: left;
+  height: 30px;
+  width: 52px;
+  position: relative;
+  padding-right: 5px;
+}
+
+.logo-facebook{
+  background: url("https://fbstatic-a.akamaihd.net/rsrc.php/v2/yo/r/jVG1f1GslU7.png") no-repeat scroll center center transparent;
+  border-right: 1px solid #55877B;
+  float: left;
+  height: 30px;
+  width: 52px;
+  position: relative;
+  padding-right: 5px;
+}
+
+.text{
+  display: inline-block;
+  padding-top: 3px;
+  padding-bottom: 2px;
+  position: relative;
+  text-shadow: none;
+  white-space: nowrap;
+}
+
+.post-content > .jumbotron{
+  padding-top: 70px;
+  color: #fff;
+  height: 500px;
+}
+
+.modal-header{
+  color: #FFFFFF;
+  background-color: #1F2C39;
+}
+
+.modal-header > button {
+  color:#FFFFFF;
+}
+
+.modal-footer{
+  color: #FFFFFF;
+  background-color: #1F2C39; 
+}
+
+.modal-dialog{
+  border-radius:10px;
+}
+
+.login-image{
+	padding-top: 0px; 
+	padding-left:0px; 
+	padding-right:0px;
+	min-width: 100%;
+}
+
+.img-responsive{
+  width: 100%;
+  height: 500px;
+}
+
+.post-content {
+  top:0;
+  left:0;
+  position: absolute;
+  width: 100%;
+}
+
+.post-content > .jumbotron {
+	background-color: transparent;
+	text-align: center;	
+}
+
+.btn-facebook{
+	background-color: #44619D;
+	color: #FFFFFF;
+	background-image: linear-gradient(to bottom, #33508C 0px, #44619D 100%);
+	border-color: #33518D;
+}
+
+.btn-google{
+  background-color: #DD4B39;
+  color: #FFFFFF;
+  background-image: linear-gradient(to bottom, #CC3A28 0px, #DD4B39 100%);
+  border-color: #EE5C49;
+}
+
+.btn-secondary {
+  background-image: linear-gradient(to bottom, #FFF 0px, #F2F2F2 100%);
+  border-color: #D8D8D8;
+  color: #222;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.main {
+  padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-top: 30px;
+    padding-right: 110px;
+    padding-left: 110px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+.list-group-item{
+  border:0px;
+}
+
+.tab-content{
+  border: 1px solid #ddd;
+  border-top-color: #fff;
+  border-radius: 3px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.tab-pane > .jumbotron{
+  margin: 80px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding: 20px;
+}
+
+.voting{
+  display: none;
+}
+
+.glyphicon.glyphicon-star-empty {
+  font-size: 2.5rem;
+  color: #FFA700;
+}
+
+.glyphicon.glyphicon-star {
+  font-size: 2.5rem;
+  color: #FFA700;
+}
+
+.sm-star {
+  font-size: 1.5rem !important;
+  color: #333333 !important;
+}
+
+.expand-text{
+  text-align:center;   
+}
+
+@media(min-width:992px) {
+  .votes-count {
+    margin-left: 12px;
+  }
+}
+
+.new-tips{
+  background-color: rgba(230,230,230,0.6);    
+}
+
+.new-tips > .jumbotron{
+  padding: 20px;
+}

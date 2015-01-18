@@ -1,1 +1,2 @@
 $("#favor-post-<%= @favorite.post.id %>").html("<%=j render(@favorite, post: @favorite.post) %>");
+$("#fav-count-<%= @favorite.post.id %>").html("<%= @favorite.post.favorites.count %>");

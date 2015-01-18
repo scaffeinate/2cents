@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params) do |post|
       post.user = current_user
+      post.location = current_user.location
     end
 
     respond_to do |format|
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post_id = params[:id]
     @post.destroy
     respond_to do |format|
       format.js

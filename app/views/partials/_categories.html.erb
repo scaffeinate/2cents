@@ -1,0 +1,16 @@
+<div class="col-md-2">
+  <center>
+    <div class="caption">
+      <h4>Categories</h4>
+      <div style="text-align:left;">
+        <ul class="list-group" style="padding-left:35px;">
+          <% @categories.each do |c| %>
+            <li class="list-group-item">
+              <%= link_to c.name, categories_path(c.id) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </center>
+</div>

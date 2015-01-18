@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts.paginate(page: params[:page]).order('created_at DESC')
+    @categories = Category.order('posts_count DESC').limit(5)
     respond_to do |format|
       format.js
       format.html
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
 
   def favorites
     @favorites = @user.posts.joins(:favorites).paginate(page: params[:page]).order('created_at DESC')
+    @categories = Category.order('posts_count DESC').limit(5)
     respond_to do |format|
       format.js
       format.html
@@ -36,6 +38,7 @@ class UsersController < ApplicationController
 
   def upvotes
     @upvotes = @user.posts.joins(:upvotes).paginate(page: params[:page]).order('created_at DESC')
+    @categories = Category.order('posts_count DESC').limit(5)
     respond_to do |format|
       format.js
       format.html
@@ -44,6 +47,7 @@ class UsersController < ApplicationController
 
   def downvotes
     @downvotes = @user.posts.joins(:downvotes).paginate(page: params[:page]).order('created_at DESC')
+    @categories = Category.order('posts_count DESC').limit(5)
     respond_to do |format|
       format.js
       format.html

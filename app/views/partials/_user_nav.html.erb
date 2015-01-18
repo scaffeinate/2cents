@@ -1,4 +1,4 @@
-<ul class="nav nav-pills">
+<ul class="nav nav-tabs">
   <li class="<%= type=='2cents' ? 'active' : ''%>">
     <%= link_to "2 cents", user_path(@user) %>
   </li>
@@ -12,6 +12,3 @@
     <%= link_to "Downvotes", downvotes_user_path(@user) %>
   </li>
 </ul>
-<% if @user == current_user %>
-  <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-default' %>
-<% end %>

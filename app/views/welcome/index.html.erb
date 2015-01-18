@@ -1,0 +1,71 @@
+<%= render 'partials/navbar_login', transparent: true %>
+<div class="container login-image">
+  <div class="row">
+    <div class="col-md-12">
+      <%= image_tag 'download.jpg', class: 'img-responsive', alt: 'TwoCents' %>
+      <div class="post-content">
+        <div class="jumbotron">
+          <h1>Welcome to TwoCents</h1>
+          <p class="lead">Know more about the locality, from the people living there.</p>
+          <p><%= link_to "<span class='logo-facebook'></span> <span class='text'>Sign in with Facebook</span>".html_safe, user_omniauth_authorize_path(:facebook), class: 'btn btn-lg btn-facebook', style: 'width:280px;' %>
+          </p>
+          <p><%= link_to "<span class='logo-google'></span> <span class='text'>Sign in with Google</span>".html_safe, user_omniauth_authorize_path(:google_oauth2), class: 'btn btn-lg btn-google', style: 'width:280px;' %></p>
+          <p><a class="btn btn-lg btn-secondary" href="#" role="button" style="width:130px;" data-toggle="modal" data-target="#signUpModal">Sign Up</a> | <a class="btn btn-lg btn-secondary" href="#" role="button" style="width:130px;" data-toggle="modal" data-target="#loginModal">Sign In</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" style="padding:10px">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <h2>What is TwoCents ?</h2>
+      <p>TwoCents is a web and mobile application that brings you the tips and tricks of living in a neighborhood from the people living in that area. </p>
+    </div>
+    <div class="col-md-4">
+      <h2>How to use TwoCents?</h2>
+      <p>TwoCents is currently available as a web application and an Android application. More platforms will be supported soon. </p>
+    </div>
+    <div class="col-md-4">
+      <h2>Why TwoCents?</h2>
+      <p>New to a neighborhood? TwoCents will help you get the best out of your neighborhood with tips from the people living there.</p>
+    </div>
+  </div>
+  <hr>
+  <footer>
+    <p>© Company 2014</p>
+  </footer>
+</div>
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" style="border-radius:10px;">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'devise/sessions/form' %>
+        <%= link_to "Forgot your password?", new_password_path(resource_name) %><br>
+        <%= link_to "Sign up", new_registration_path(resource_name) %><br>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="signUpModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'devise/registrations/form' %><br>
+        <%= link_to "Log in", new_session_path(resource_name) %><br>
+        <%= link_to "Didn't receive confirmation?", new_confirmation_path(resource_name) %><br>
+      </div>
+    </div>
+  </div>
+</div>

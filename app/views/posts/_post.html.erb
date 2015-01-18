@@ -1,24 +1,34 @@
-<div id="post-<%= post.id %>" class="row">
-  <div class="col-lg-1">
-    <%= link_to post.user do %>
-      <%= render 'partials/avatar', user: post.user, klass: 'avatar' %>
-    <% end %>
-  </div>
-  <div class="col-lg-8">
-    <h5><b><%= post.user.first_name %></b> @<%= post.user.username %></h5>
-    <span><%= post.content %></span>
-  </div>
-  <div class="col-lg-3">
-    <%= relative_time(post.created_at) %>
-  </div>
-  <div class="col-lg-12">
-    <div id="upvote-downvote-<%= post.id %>">
-      <%= render 'partials/upvote_downvote', post: post %>
+<div id="post-<%= post.id %>" class="post">
+  <div class= "well">
+    <div class="row">
+      <div class="col-md-1">
+        <div id="upvote-downvote-<%= post.id %>">
+          <%= render 'partials/upvote_downvote', post: post %>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <h4><%= link_to post.content, post_path(post) %></h4>
+      </div>
+      <div class="col-md-2">
+        <%= render 'posts/delete_post', post: post %>
+        <div id="favor-post-<%= post.id %>">
+          <%= render 'favorites/favorite', post: post %>
+        </div>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= post.id %>" aria-expanded="true" aria-controls="collapse-<%= post.id %>">Expand</a>
+      </div>
     </div>
-    <div id="favor-post-<%= post.id %>">
-      <%= render 'favorites/favorite', post: post %>
+    <div id="collapse-<%= post.id %>" class="row panel-collapse collapse" role="tabpanel" aria-labelledby="heading-<%= post.id %>">
+      <hr>
+      <div class="col-md-6">
+        <span class="glyphicon glyphicon-map-marker"></span> <%= post.location %>
+        <span id="fav-count-<%= post.id %>" style="margin-left: 5px;"><%= post.favorites_count %></span> <span class="glyphicon glyphicon-star sm-star"></span>
+        <span style="margin-left: 5px;"><%= post.comments_count %></span> <span class="glyphicon glyphicon glyphicon-comment"></span>
+      </div>
+      <div class="col-md-6">
+        <%= link_to relative_time(post.created_at), post_path(post) %> | Posted by <%= link_to post.user do %>
+          @<%= post.user.username %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <%= link_to "Show Details", post_path(post) %>
 </div>
-<br>
