@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 
-  self.per_page = 20
+  self.per_page = 4
 
   validates :content, presence: true, length: { maximum: 240 }
   validates :location, presence: true

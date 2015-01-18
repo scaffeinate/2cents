@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap
+//= require bindWithDelay
 //= require autocomplete-rails
 //= require_tree .
