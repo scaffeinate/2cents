@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118080915) do
+ActiveRecord::Schema.define(version: 20150118093955) do
 
   create_table "authentications", force: :cascade do |t|
     t.string   "uid"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20150118080915) do
   end
 
   add_index "authentications", ["user_id"], name: "index_authentications_on_user_id"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "posts_count"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "categories", ["user_id"], name: "index_categories_on_user_id"
 
   create_table "comments", force: :cascade do |t|
     t.string   "content"

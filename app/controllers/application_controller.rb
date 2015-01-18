@@ -20,12 +20,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def after_sign_in_path_for(resource)
-    if resource.is_profile_complete?
-      sign_in(resource)
-      root_path
-    else
-      complete_profile_user_path(resource)
+  def check_profile_complete
+    if current_user.is_profile_complete?
+      redirect_to complete_profile_user_path(current_user)
     end
   end
 
