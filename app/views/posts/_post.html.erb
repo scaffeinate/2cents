@@ -19,7 +19,9 @@
     <div id="collapse-<%= post.id %>" class="row panel-collapse collapse" role="tabpanel" aria-labelledby="heading-<%= post.id %>">
       <hr>
       <div class="col-md-6">
-        <span class="glyphicon glyphicon-map-marker"> <%= post.location %></span>
+        <span class="glyphicon glyphicon-map-marker"></span> <%= post.location %>
+        <span id="fav-count-<%= post.id %>" style="margin-left: 5px;"><%= post.favorites_count %></span> <span class="glyphicon glyphicon-star sm-star"></span>
+        <span style="margin-left: 5px;"><%= post.comments_count %></span> <span class="glyphicon glyphicon glyphicon-comment"></span>
       </div>
       <div class="col-md-6">
         <%= link_to relative_time(post.created_at), post_path(post) %> | Posted by <%= link_to post.user do %>

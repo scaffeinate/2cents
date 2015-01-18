@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118105922) do
+ActiveRecord::Schema.define(version: 20150118143436) do
 
   create_table "authentications", force: :cascade do |t|
     t.string   "uid"
@@ -89,12 +89,14 @@ ActiveRecord::Schema.define(version: 20150118105922) do
   add_index "post_categories", ["post_id"], name: "index_post_categories_on_post_id"
 
   create_table "posts", force: :cascade do |t|
-    t.string   "content",                 null: false
+    t.string   "content",                     null: false
     t.integer  "user_id"
-    t.string   "location",                null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "votes_count", default: 0, null: false
+    t.string   "location",                    null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "votes_count",     default: 0, null: false
+    t.integer  "favorites_count", default: 0, null: false
+    t.integer  "comments_count",  default: 0, null: false
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
@@ -133,6 +135,9 @@ ActiveRecord::Schema.define(version: 20150118105922) do
     t.string   "slug"
     t.boolean  "is_profile_complete",    default: false, null: false
     t.boolean  "has_random_password",    default: false, null: false
+    t.integer  "favorites_count"
+    t.integer  "upvotes_count"
+    t.integer  "downvotes_count"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
