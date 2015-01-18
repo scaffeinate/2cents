@@ -1,0 +1,5 @@
+<% if favored?(post_id) %>
+  <%= link_to :favored, favorite_path(get_favorite(post_id)), method: :delete, remote: true %>
+<% else %>
+  <%= link_to :favor, favorites_path(post_id: post_id), method: :post, remote: true %>
+<% end %>

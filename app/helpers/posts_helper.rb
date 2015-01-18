@@ -16,6 +16,14 @@ module PostsHelper
     !get_downvote(post).nil?
   end
 
+  def favored?(post_id)
+    !get_favorite(post_id).nil?
+  end
+
+  def get_favorite(post_id)
+    current_user.favorites.find_by(post_id: post_id)
+  end
+
   def relative_time(created_at)
     time_ago_in_words(created_at)
   end
