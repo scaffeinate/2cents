@@ -1,8 +1,21 @@
-<% if user_signed_in? %>
-  <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-<% end %>
-<%= render 'partials/sidebar_profile' %>
-<%= render 'partials/new_post' %>
+<%= render 'partials/navbar_home' %>
+<div id="main-body" class="container-fluid" style="padding-top: 50px;">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-12 main">
+      <div class="row">
+        <%= render 'partials/sidebar_profile' %>
+        <div class="col-md-8">
+          <span class="new-tips">
+            <div class="jumbotron">
+              <%= render 'partials/new_post' %>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="feed" class="well">
   <%= render(@posts) || 'no posts' %>
 </div>
