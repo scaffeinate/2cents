@@ -1,6 +1,10 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
+this.show_voting = function(el) {
+  $(el).parent().find('.col-md-1').find('.voting').toggle(100);
+};
+
 this.addCategory = function(e) {
   var category_name;
   e.preventDefault();

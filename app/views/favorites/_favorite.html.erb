@@ -1,9 +1,9 @@
 <% if favored?(post) %>
   <%= form_for([post, get_favorite(post)], method: :delete, remote: true) do |f| %>
-    <%= f.button "<span class='glyphicon glyphicon-star'></span>".html_safe %>
+    <%= f.button "<span class='glyphicon glyphicon-star'></span>".html_safe, class: 'btn btn-default' %>
   <% end %>
 <% else %>
   <%= form_for([post, post.favorites.build], remote: true) do |f| %>
-    <%= f.button "<span class='glyphicon glyphicon-star-empty'></span>".html_safe %>
+    <%= f.button "<span class='glyphicon glyphicon-star-empty'></span>".html_safe, class: 'btn btn-default' %>
   <% end %>
 <% end %>

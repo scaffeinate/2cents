@@ -11,13 +11,27 @@
               <%= render 'partials/new_post' %>
             </div>
           </span>
+          <div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+              <li role="presentation"><a href="#mostpopular" aria-controls="mostpopular" role="tab" data-toggle="tab">Most Popular</a></li>
+              <li role="presentation"><a href="#trending" aria-controls="trending" role="tab" data-toggle="tab">Trending</a></li>
+            </ul>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+              <br>
+              <br>
+              <div id="feed">
+                <%= render(@posts) || 'No Posts' %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div id="feed" class="well">
-  <%= render(@posts) || 'no posts' %>
 </div>
 <div id="load-more">
   <%= render 'partials/load_more', items: @posts %>
