@@ -1,5 +1,7 @@
-<%= render 'upvotes/upvote', post: post %>
-<div id="votes-count-<%= post.id %>" class="text-center">
-  <%= post.votes_count %>
-</div>
-<%= render 'downvotes/downvote', post: post %>
+<center>
+  <%= render 'upvotes/upvote', post: post %>
+  <div id="votes-count-<%= post.id %>" class="votes-count">
+    <%= post.votes_count %>
+  </div>
+  <%= render 'downvotes/downvote', post: post %>
+</center>

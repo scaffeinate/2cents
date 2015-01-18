@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 this.show_voting = function(el) {
-  $(el).parent().find('.col-md-1').find('.voting').toggle(100);
+  $(el).find('.col-md-1').find('.voting').toggle(100);
 };
 
 this.addCategory = function(e) {

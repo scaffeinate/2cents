@@ -9,14 +9,14 @@
       </button>
       <a class="navbar-brand" href="#">TwoCents</a>
     </div>
-    <div class="nav navbar-nav navbar-left" style="padding-left:200px;padding-right:200px;">
-      <form class="navbar-form" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" style="width:500px;">
-        </div>
-      </form>
-    </div>
     <div class="collapse navbar-collapse" id="twocents-navbar">
+      <div class="nav navbar-nav navbar-left">
+        <form class="navbar-form" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" style="width: 450px;">
+          </div>
+        </form>
+      </div>
       <ul class="nav navbar-nav navbar-right">
         <li><a class="navbar-link" href="#" title="Notification"><span class="glyphicon glyphicon-globe"></span></a></li>
         <% if user_signed_in? %>

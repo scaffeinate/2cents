@@ -2,26 +2,17 @@
   <div class= "well">
     <div id="post-<%= post.id %>" class="row">
       <div class="col-md-1">
-        <%= link_to post.user do %>
-          <%= render 'partials/avatar', user: post.user, klass: 'avatar-sm' %>
-        <% end %>
-      </div>
-      <div class="col-md-1">
-        <div class="voting">
-          <div id="upvote-downvote-<%= post.id %>">
-            <%= render 'partials/upvote_downvote', post: post %>
-          </div>
+        <div id="upvote-downvote-<%= post.id %>">
+          <%= render 'partials/upvote_downvote', post: post %>
         </div>
       </div>
-      <div class="col-md-8 main-post-content" data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= post.id %>" aria-expanded="true" aria-controls="collapse-<%= post.id %>" onclick="show_voting(this)">
-        <p><%= post.content %></p>
+      <div class="col-md-9 main-post-content" data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= post.id %>" aria-expanded="true" aria-controls="collapse-<%= post.id %>">
+        <h4><%= post.content %></h4>
       </div>
       <div class="col-md-2 favorite">
         <div id="favor-post-<%= post.id %>">
           <%= render 'favorites/favorite', post: post %>
         </div>
-        <!-- <span class="glyphicon glyphicon-star-empty" style="min-height:30px;min-width:30px;"></span>
-    <span class="glyphicon glyphicon-star" style="min-height:30px;min-width:30px;display:none;"></span> -->
       </div>
     </div>
     <br>
@@ -33,7 +24,10 @@
         <%= relative_time(post.created_at) %>
       </div>
       <div class="col-md-4 expand-text">
-        Post By <%= post.user.first_name %> @<%= post.user.username %>
+        Post By <%= link_to post.user do %>
+          <%= render 'partials/avatar', user: post.user, klass: 'avatar-sm' %>
+          <%= post.user.first_name %> @<%= post.user.username %>
+        <% end %>
       </div>
     </div>
   </div>
