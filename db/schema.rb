@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118143436) do
+ActiveRecord::Schema.define(version: 20150118145632) do
 
   create_table "authentications", force: :cascade do |t|
     t.string   "uid"
@@ -135,9 +135,10 @@ ActiveRecord::Schema.define(version: 20150118143436) do
     t.string   "slug"
     t.boolean  "is_profile_complete",    default: false, null: false
     t.boolean  "has_random_password",    default: false, null: false
-    t.integer  "favorites_count"
-    t.integer  "upvotes_count"
-    t.integer  "downvotes_count"
+    t.integer  "favorites_count",        default: 0,     null: false
+    t.integer  "upvotes_count",          default: 0,     null: false
+    t.integer  "downvotes_count",        default: 0,     null: false
+    t.integer  "posts_count",            default: 0,     null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   validates :location, presence: true
   validates :user, presence: true
 
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   has_many :upvotes
   has_many :downvotes
   has_many :favorites

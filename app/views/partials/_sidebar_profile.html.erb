@@ -7,19 +7,19 @@
       <h5><%= "#{current_user.first_name} #{current_user.last_name}" %></h5>
       <ul class="list-group">
         <li class="list-group-item">
-          <span class="badge">14</span>
+          <span class="badge"><%= current_user.posts_count %></span>
           <%= link_to '2 cents', user_path(current_user) %>
         </li>
         <li class="list-group-item">
-          <span class="badge">14</span>
+          <span class="badge"><%= current_user.favorites_count %></span>
           <%= link_to 'Favorites', favorites_user_path(current_user) %>
         </li>
         <li class="list-group-item">
-          <span class="badge">14</span>
+          <span class="badge"><%= current_user.upvotes_count %></span>
           <%= link_to 'Upvotes', upvotes_user_path(current_user) %>
         </li>
         <li class="list-group-item">
-          <span class="badge">14</span>
+          <span class="badge"><%= current_user.downvotes_count %></span>
           <%= link_to 'Downvotes', downvotes_user_path(current_user) %>
         </li>
         <li class="list-group-item">
