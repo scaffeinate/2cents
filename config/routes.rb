@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :users, except: :new do
     member do
+      get 'complete_profile', as: :complete_profile
       get 'two-cents'
       get 'favorites'
       get 'upvotes'

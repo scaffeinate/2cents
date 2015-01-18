@@ -11,6 +11,15 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
+  def slug_candidates
+    [
+      [:first_name, :last_name]
+    ]
+  end
+
+  extend FriendlyId
+  friendly_id :slug_candidates, use: [:slugged, :finders]
+
   has_many :posts
   has_many :authentications
   has_many :upvotes

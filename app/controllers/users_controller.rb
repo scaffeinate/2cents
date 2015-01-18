@@ -49,8 +49,8 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :username, :password,
-                                 :about, :location, :website, :avatar, :cover)
+    params.require(:user).permit(:first_name, :last_name, :username, :password, :password_confirmation,
+                                 :location, :avatar)
   end
 
   def check_user
@@ -60,6 +60,6 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 end

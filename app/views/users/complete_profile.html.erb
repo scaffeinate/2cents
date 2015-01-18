@@ -1,0 +1,19 @@
+<%= form_for @user do |f| %>
+  <div class="form-group">
+    <%= f.text_field :username, class: 'form-control', placeholder: 'username' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :location, class: 'form-control', placeholder: 'Location' %>
+  </div>
+  <% if @user.is_random_password? %>
+    <div class="form-group">
+      <%= f.password_field :password, class: 'form-control', placeholder: 'password' %>
+    </div>
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm Password' %>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.submit :complete, class: 'btn btn-primary' %>
+  </div>
+<% end %>
