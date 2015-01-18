@@ -14,7 +14,8 @@ Rails.application.routes.draw do
 
   resources :users, except: :new
   resources :posts, only: [:create, :show, :update, :destroy]
-
+  resources :upvotes, only: [:create, :destroy]
+  resources :downvotes, only: [:create, :destroy]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

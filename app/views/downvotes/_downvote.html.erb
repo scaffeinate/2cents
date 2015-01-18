@@ -1,0 +1,5 @@
+<% if downvoted?(post) %>
+  <%= link_to :downvoted, downvote_path(get_downvote(post.id), post_id: post.id), method: :delete, remote: true %>
+<% else %>
+  <%= link_to :downvote, downvotes_path(post_id: post.id), method: :post, remote: true %>
+<% end %>

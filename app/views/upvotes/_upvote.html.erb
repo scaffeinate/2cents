@@ -1,0 +1,5 @@
+<% if upvoted?(post) %>
+  <%= link_to :upvoted, upvote_path(get_upvote(post.id), post_id: post.id), method: :delete, remote: true %>
+<% else %>
+  <%= link_to :upvote, upvotes_path(post_id: post.id), method: :post, remote: true %>
+<% end %>
