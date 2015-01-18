@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   has_many :authentications
+  has_many :upvotes
+  has_many :downvotes
 
   def self.find_for_oauth(auth)
     registered_user = User.where(:email => auth.info.email).first
