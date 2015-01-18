@@ -33,8 +33,9 @@
         <div class="jumbotron">
           <h1>Welcome to TwoCents</h1>
           <p class="lead">Know more about the locality, from the people living there.</p>
-          <p><a class="btn btn-lg btn-facebook" href="#" role="button" style="width:280px;"><span class="logo-facebook"></span><span class="text">Sign In with Facebook</span></a></p>
-          <p><a class="btn btn-lg btn-google" href="#" role="button" style="width:280px;"><span class="logo-google"></span><span class="text">Sign In with Google</span></a></p>
+          <p><%= link_to "<span class='logo-facebook'></span> <span class='text'>Sign in with Facebook</span>".html_safe, user_omniauth_authorize_path(:facebook), class: 'btn btn-lg btn-facebook', style: 'width:280px;' %>
+          </p>
+          <p><%= link_to "<span class='logo-google'></span> <span class='text'>Sign in with Google</span>".html_safe, user_omniauth_authorize_path(:google_oauth2), class: 'btn btn-lg btn-google', style: 'width:280px;' %></p>
           <p><a class="btn btn-lg btn-secondary" href="#" role="button" style="width:130px;" data-toggle="modal" data-target="#signUpModal">Sign Up</a> | <a class="btn btn-lg btn-secondary" href="#" role="button" style="width:130px;" data-toggle="modal" data-target="#loginModal">Sign In</a></p>
         </div>
       </div>
