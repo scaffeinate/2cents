@@ -3,3 +3,6 @@
 <% end %>
 <%= render 'partials/new_post' %>
 <%= render @posts || 'no posts' %>
+<div id="load-more">
+  <%= render 'partials/load_more', items: @posts %>
+</div>
