@@ -1,6 +1,6 @@
 <%= form_tag posts_path, method: :post, remote: true do %>
   <div class="form-group">
-    <%= text_area_tag 'post[content]', nil, class: 'form-control', placeholder: 'Enter Post max 240 characters' %>
+    <%= text_area_tag 'post[content]', nil, id: 'new-post', class: 'form-control', placeholder: 'Enter Post max 240 characters' %>
     <%= text_field_tag 'post[location]', nil, class: 'form-control', placeholder: 'Location' %>
   </div>
   <div class="form-group">

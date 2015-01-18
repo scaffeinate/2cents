@@ -2,7 +2,9 @@
   <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
 <% end %>
 <%= render 'partials/new_post' %>
-<%= render(@posts) || 'no posts' %>
+<div id="feed" class="well">
+  <%= render(@posts) || 'no posts' %>
+</div>
 <div id="load-more">
   <%= render 'partials/load_more', items: @posts %>
 </div>

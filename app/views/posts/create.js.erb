@@ -1,0 +1,6 @@
+<% if @post.persisted? %>
+  $("#new-post").val("");
+  $("#feed").prepend("<%=j render @post %>");
+<% else %>
+  
+<% end %>
