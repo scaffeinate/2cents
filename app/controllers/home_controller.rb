@@ -29,7 +29,7 @@ class HomeController < ApplicationController
     end
   end
 
-  def categories
+  def get_categories
     @category = Category.find(params[:id])
     @posts = @category.posts.paginate(page: params[:page]).order('created_at DESC')
     @categories = Category.order('posts_count DESC').limit(5)

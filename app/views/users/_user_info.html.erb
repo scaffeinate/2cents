@@ -6,7 +6,9 @@
       <br>
       <span style="text-align:left;">
         <h5>Join Date: <%= relative_time(@user.created_at)%></h5>
-        <h5>Last Post: <%= relative_time(@user.posts.last.created_at) %></h5>
+        <% unless @user.posts.empty? %>
+          <h5>Last Post: <%= relative_time(@user.posts.last.created_at) %></h5>
+        <% end %>
         <h5>Total TwoCents: <%= @user.posts_count %></h5>
         <h5>Total Comments: <%= @user.comments_count %></h5>
         <h5>Favorites: <%= @user.favorites_count %></h5>
