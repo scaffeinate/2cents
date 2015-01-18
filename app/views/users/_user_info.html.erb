@@ -1,0 +1,16 @@
+<div class="col-md-2">
+  <center>
+    <%= render 'partials/avatar', user: @user, klass: 'avatar' %>
+    <div class="caption">
+      <h5><%= @user.first_name %> <%= @user.last_name %></h5>
+      <br>
+      <span style="text-align:left;">
+        <h5>Join Date: <%= relative_time(@user.created_at)%></h5>
+        <h5>Last Post: <%= relative_time(@user.posts.last.created_at) %></h5>
+        <h5>Total TwoCents: <%= @user.posts_count %></h5>
+        <h5>Total Comments: <%= @user.comments_count %></h5>
+        <h5>Favorites: <%= @user.favorites_count %></h5>
+      </span>
+    </div>
+  </center>
+</div>

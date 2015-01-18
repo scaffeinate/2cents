@@ -1,4 +1,30 @@
-<%= render 'partials/user_nav', type: 'favorites' %>
-<div id="feed" class="well">
-  <%= render(@favorites) || "No favorites" %>
+<%= render 'partials/navbar_home' %>
+<div id="main-body" class="container-fluid" style="padding-top: 50px;">
+  <div class="row">
+    <div class="col-md-12 main">
+      <div class="row">
+        <%= render 'user_info' %>
+        <div class="col-md-8">
+          <span class="new-tips">
+            <div class="jumbotron">
+              <%= render 'partials/new_post' %>
+            </div>
+          </span>
+          <div role="tabpanel">
+            <%= render 'partials/user_nav', type: 'favorites' %>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+              <br>
+              <br>
+              <div id="feed">
+                <%= render(@favorites) || "<div class='text-center'>No favorites</div><br />".html_safe %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= render 'partials/categories' %>
+      </div>
+    </div>
+  </div>
 </div>
