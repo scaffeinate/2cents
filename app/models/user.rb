@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :authentications
   has_many :upvotes
   has_many :downvotes
+  has_many :favorites
 
   def self.find_for_oauth(auth)
     registered_user = User.where(:email => auth.info.email).first
