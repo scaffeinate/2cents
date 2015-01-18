@@ -28,6 +28,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
+  resources :categories, only: :create do
+    get :autocomplete_category_name, on: :collection
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

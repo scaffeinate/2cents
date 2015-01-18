@@ -4,6 +4,12 @@
     <%= text_field_tag 'post[location]', nil, class: 'form-control', placeholder: 'Location' %>
   </div>
   <div class="form-group">
+    <%= autocomplete_field_tag :autocomplete_category_name, "", autocomplete_category_name_categories_path, class: "form-control", placeholder: "Search by Category Name" %>
+    <%= hidden_field_tag :category_name, "", name: "category[name]", placeholder:"Category Name", id: "category_name", class: "form-control" %>
+    <div id="categories">
+    </div>
+  </div>
+  <div class="form-group">
     <%= submit_tag 'Post', id: 'post', class: 'btn btn-primary' %>
   </div>
 <% end %>
