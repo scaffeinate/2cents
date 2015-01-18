@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
   def self.find_for_oauth(auth)
     registered_user = User.where(:email => auth.info.email).first
     if registered_user
+      registered_user.update_attribute(:remote_avatar_url, auth.info.image.gsub('http://','https://'))
       return registered_user
     else
       user = User.new(first_name: auth.info.first_name, last_name: auth.info.last_name, email: auth.info.email,
