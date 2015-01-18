@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     root 'welcome#index'
   end
 
+  get 'popular' => 'home#popular', as: :popular
+  get 'trending' => 'home#trending', as: :trending
+
   resources :users, except: :new do
     member do
       get 'complete_profile', as: :complete_profile

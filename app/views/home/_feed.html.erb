@@ -1,0 +1,39 @@
+<%= render 'partials/navbar_home' %>
+<div id="main-body" class="container-fluid" style="padding-top: 50px;">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-12 main">
+      <div class="row">
+        <%= render 'partials/sidebar_profile' %>
+        <div class="col-md-8">
+          <span class="new-tips">
+            <div class="jumbotron">
+              <%= render 'partials/new_post' %>
+            </div>
+          </span>
+          <div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="<%= 'active' if type == 'home' %>"><%= link_to "Home", home_path %></li>
+              <li role="presentation" class="<%= 'active' if type == 'popular' %>"><%= link_to "Most Popular", popular_path %></li>
+              <li role="presentation" class="<%= 'active' if type == 'trending' %>"><%= link_to "Trending", trending_path %></li>
+            </ul>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+              <br>
+              <br>
+              <div id="feed">
+                <%= render(@posts) || 'No Posts' %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= render 'partials/categories' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="load-more">
+  <%= render 'partials/load_more', items: @posts %>
+</div>
