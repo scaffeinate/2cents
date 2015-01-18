@@ -1,0 +1,14 @@
+<ul class="nav nav-pills">
+  <li class="<%= type=='2cents' ? 'active' : ''%>">
+    <%= link_to "2 cents", user_path(@user) %>
+  </li>
+  <li class="<%= type=='favorites' ? 'active' : ''%>">
+    <%= link_to "Favorites", favorites_user_path(@user) %>
+  </li>
+  <li class="<%= type=='upvotes' ? 'active' : ''%>">
+    <%= link_to "Upvotes", upvotes_user_path(@user) %>
+  </li>
+  <li class="<%= type=='downvotes' ? 'active' : ''%>">
+    <%= link_to "Downvotes", downvotes_user_path(@user) %>
+  </li>
+</ul>
