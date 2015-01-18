@@ -6,27 +6,24 @@
           <%= render 'partials/upvote_downvote', post: post %>
         </div>
       </div>
-      <div class="col-md-9 main-post-content" data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= post.id %>" aria-expanded="true" aria-controls="collapse-<%= post.id %>">
-        <h4><%= post.content %></h4>
+      <div class="col-md-9">
+        <h4><%= link_to post.content, post_path(post) %></h4>
       </div>
-      <div class="col-md-2 favorite">
+      <div class="col-md-2">
         <div id="favor-post-<%= post.id %>">
           <%= render 'favorites/favorite', post: post %>
         </div>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= post.id %>" aria-expanded="true" aria-controls="collapse-<%= post.id %>">Expand</a>
       </div>
     </div>
-    <br>
     <div id="collapse-<%= post.id %>" class="row panel-collapse collapse" role="tabpanel" aria-labelledby="heading-<%= post.id %>">
-      <div class="col-md-4">
-        <span class="glyphicon glyphicon-map-marker"><%= post.location %></span>
+      <hr>
+      <div class="col-md-6">
+        <span class="glyphicon glyphicon-map-marker"> <%= post.location %></span>
       </div>
-      <div class="col-md-4 expand-text">
-        <%= relative_time(post.created_at) %>
-      </div>
-      <div class="col-md-4 expand-text">
-        Post By <%= link_to post.user do %>
-          <%= render 'partials/avatar', user: post.user, klass: 'avatar-sm' %>
-          <%= post.user.first_name %> @<%= post.user.username %>
+      <div class="col-md-6">
+        <%= link_to relative_time(post.created_at), post_path(post) %> | Posted by <%= link_to post.user do %>
+          @<%= post.user.username %>
         <% end %>
       </div>
     </div>
