@@ -21,7 +21,7 @@ class HomeController < ApplicationController
   end
 
   def trending
-    @posts = Post.where(location: current_user.location).paginate(page: params[:page]).order('votes_count DESC')
+    @posts = Post.where("created_at >= ?", 1.week.ago.utc).paginate(page: params[:page]).order("votes_count DESC")
     @categories = Category.order('posts_count DESC').limit(5)
     respond_to do |format|
       format.html
