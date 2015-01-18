@@ -12,3 +12,6 @@
     <%= link_to "Downvotes", downvotes_user_path(@user) %>
   </li>
 </ul>
+<% if @user == current_user %>
+  <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-default' %>
+<% end %>
