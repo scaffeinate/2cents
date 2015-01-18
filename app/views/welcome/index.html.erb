@@ -1,0 +1,64 @@
+<nav class="navbar navbar-inverse navbar-fixed-top login-page" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#twocents-navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Two Cents</a>
+    </div>
+    <div class="collapse navbar-collapse" id="twocents-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="navbar-link" href="#">About Us</a></li>
+        <li><a class="navbar-link" href="#">Contact</a></li>
+        <li><a class="navbar-link" href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
+        <li>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#loginModal">Sign In</a>
+            </div>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container login-image">
+  <div class="row">
+    <div class="col-md-12">
+      <%= image_tag 'download.jpg', class: 'img-responsive', alt: 'TwoCents' %>
+      <div class="post-content">
+        <div class="jumbotron">
+          <h1>Welcome to TwoCents</h1>
+          <p class="lead">Know more about the locality, from the people living there.</p>
+          <p><a class="btn btn-lg btn-facebook" href="#" role="button" style="width:280px;"><span class="logo-facebook"></span><span class="text">Sign In with Facebook</span></a></p>
+          <p><a class="btn btn-lg btn-google" href="#" role="button" style="width:280px;"><span class="logo-google"></span><span class="text">Sign In with Google</span></a></p>
+          <p><a class="btn btn-lg btn-secondary" href="#" role="button" style="width:130px;" data-toggle="modal" data-target="#signUpModal">Sign Up</a> | <a class="btn btn-lg btn-secondary" href="#" role="button" style="width:130px;" data-toggle="modal" data-target="#loginModal">Sign In</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" style="padding:10px">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <h2>What is TwoCents ?</h2>
+      <p>TwoCents is a web and mobile application that brings you the tips and tricks of living in a neighborhood from the people living in that area. </p>
+    </div>
+    <div class="col-md-4">
+      <h2>How to use TwoCents?</h2>
+      <p>TwoCents is currently available as a web application and an Android application. More platforms will be supported soon. </p>
+    </div>
+    <div class="col-md-4">
+      <h2>Why TwoCents?</h2>
+      <p>New to a neighborhood? TwoCents will help you get the best out of your neighborhood with tips from the people living there.</p>
+    </div>
+  </div>
+  <hr>
+  <footer>
+    <p>© Company 2014</p>
+  </footer>
+</div>
