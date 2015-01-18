@@ -1,0 +1,26 @@
+<div id="post-<%= @post.id %>" class="row">
+  <div class="col-lg-1">
+    <%= link_to @post.user do %>
+      <%= render 'partials/avatar', user: @post.user, klass: 'avatar' %>
+    <% end %>
+  </div>
+  <div class="col-lg-8">
+    <h5><b><%= @post.user.first_name %></b> @<%= @post.user.username %></h5>
+    <span><%= @post.content %></span>
+  </div>
+  <div class="col-lg-3">
+    <%= relative_time(@post.created_at) %>
+  </div>
+  <div class="col-lg-12">
+    <div id="upvote-downvote-<%= @post.id %>">
+      <%= render 'partials/upvote_downvote', post: @post %>
+    </div>
+    <div id="favor-post-<%= @post.id %>">
+      <%= render 'favorites/favorite', post: @post %>
+    </div>
+  </div>
+</div>
+<div id="comments">
+  <%= render(@comments) || 'No Comments' %>
+</div>
+<%= render 'partials/new_comment', post: @post %>

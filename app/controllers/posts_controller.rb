@@ -15,6 +15,11 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comments = @post.comments.paginate(page: params[:page]).order('created_at DESC')
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update

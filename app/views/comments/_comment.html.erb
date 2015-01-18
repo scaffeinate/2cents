@@ -1,8 +1,7 @@
 <div id="comment-<%= comment.id %>">
-  <%= link_to profile_url(comment.user) do %>
+  <%= link_to user_path(comment.user) do %>
     <%= render 'partials/avatar', user: comment.user, klass: 'avatar' %>
   <% end %>
   <%= comment.content %>
   <%= relative_time(comment.created_at) %>
-  <%= render 'new_comment' %>
 </div>
