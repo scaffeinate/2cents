@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
+  has_many :posts
   has_many :authentications
   has_many :upvotes
   has_many :downvotes

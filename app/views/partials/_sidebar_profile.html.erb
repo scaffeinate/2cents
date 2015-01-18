@@ -2,9 +2,9 @@
   <%= render 'partials/avatar', user: current_user, klass: 'avatar' %>
 <% end %>
 <ul>
-  <li><%= link_to '2 cents', root_path %></li>
-  <li><%= link_to 'Favorites', root_path %></li>
-  <li><%= link_to 'Upvotes', root_path %></li>
-  <li><%= link_to 'Downvotes', root_path %></li>
+  <li><%= link_to '2 cents', user_path(current_user) %></li>
+  <li><%= link_to 'Favorites', favorites_user_path(current_user) %></li>
+  <li><%= link_to 'Upvotes', upvotes_user_path(current_user) %></li>
+  <li><%= link_to 'Downvotes', downvotes_user_path(current_user) %></li>
   <li><%= link_to 'Location', root_path %></li>
 </ul>
