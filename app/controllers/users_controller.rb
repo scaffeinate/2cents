@@ -13,8 +13,11 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
+    @user.is_profile_complete = true
+    @user.has_random_password = false
     if @user.save
-      redirect_to user_path(@user)
+      sign_in @user, :bypass => true
+      redirect_to root_path
     else
       render 'new'
     end

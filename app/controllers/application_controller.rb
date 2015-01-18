@@ -10,4 +10,23 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :email, :username, :password, :password_confirmation]
     devise_parameter_sanitizer.for(:sign_in) << [:email, :remember_me]
   end
+
+  def after_sign_in_path_for(resource)
+    if resource.is_profile_complete?
+      sign_in(resource)
+      root_path
+    else
+      complete_profile_user_path(resource)
+    end
+  end
+
+  def after_sign_in_path_for(resource)
+    if resource.is_profile_complete?
+      sign_in(resource)
+      root_path
+    else
+      complete_profile_user_path(resource)
+    end
+  end
+
 end

@@ -5,7 +5,7 @@
   <div class="form-group">
     <%= f.text_field :location, class: 'form-control', placeholder: 'Location' %>
   </div>
-  <% if @user.is_random_password? %>
+  <% if @user.has_random_password? %>
     <div class="form-group">
       <%= f.password_field :password, class: 'form-control', placeholder: 'password' %>
     </div>

@@ -33,9 +33,11 @@ class User < ActiveRecord::Base
       return registered_user
     else
       user = User.new(first_name: auth.info.first_name, last_name: auth.info.last_name, email: auth.info.email,
-                      password: Devise.friendly_token[0,20], remote_avatar_url: auth.info.image.gsub('http://','https://'))
+                      password: Devise.friendly_token[0,20], remote_avatar_url: auth.info.image.gsub('http://','https://'),
+                      has_random_password: true)
       user.skip_confirmation!
       user.save
+      return user
     end
   end
 

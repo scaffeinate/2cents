@@ -24,6 +24,8 @@ gem 'font-awesome-rails'
 gem 'active_model_serializers'
 
 group :development, :test do
+  gem 'letter_opener'
+  gem 'better_errors'
   gem 'sqlite3'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0.0.beta'
