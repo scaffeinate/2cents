@@ -12,5 +12,6 @@
         <h5>Favorites: <%= @user.favorites_count %></h5>
       </span>
     </div>
+    <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-primary' %>
   </center>
 </div>

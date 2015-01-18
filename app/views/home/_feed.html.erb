@@ -11,20 +11,21 @@
               <%= render 'partials/new_post' %>
             </div>
           </span>
-          <div role="tabpanel">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs nav-justified" role="tablist">
-              <li role="presentation" class="<%= 'active' if type == 'home' %>"><%= link_to "Home", home_path %></li>
-              <li role="presentation" class="<%= 'active' if type == 'popular' %>"><%= link_to "Most Popular", popular_path %></li>
-              <li role="presentation" class="<%= 'active' if type == 'trending' %>"><%= link_to "Trending", trending_path %></li>
-            </ul>
-          </div>
+          <% unless type.nil? %>
+            <div role="tabpanel">
+              <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li role="presentation" class="<%= 'active' if type == 'home' %>"><%= link_to "Home", home_path %></li>
+                <li role="presentation" class="<%= 'active' if type == 'popular' %>"><%= link_to "Most Popular", popular_path %></li>
+                <li role="presentation" class="<%= 'active' if type == 'trending' %>"><%= link_to "Trending", trending_path %></li>
+              </ul>
+            </div>
+          <% end %>
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="home">
               <br>
               <br>
               <div id="feed">
-                <%= render(@posts) || 'No Posts' %>
+                <%= render(@posts) || "<div class='text-center'>No Posts</div><br>".html_safe %>
               </div>
             </div>
           </div>

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'popular' => 'home#popular', as: :popular
   get 'trending' => 'home#trending', as: :trending
+  get 'categories/:id' => 'home#categories', as: :categories
 
   resources :users, except: :new do
     member do
