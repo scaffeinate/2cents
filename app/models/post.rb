@@ -10,5 +10,6 @@ class Post < ActiveRecord::Base
   has_many :upvotes
   has_many :downvotes
   has_many :favorites
+  has_many :comments
 
 end
