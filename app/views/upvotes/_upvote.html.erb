@@ -1,5 +1,9 @@
 <% if upvoted?(post) %>
-  <%= link_to :upvoted, upvote_path(get_upvote(post.id), post_id: post.id), method: :delete, remote: true %>
+  <%= form_for([post, get_upvote(post)], method: :delete, remote: true) do |f| %>
+    <%= f.button "<span class='glyphicon glyphicon-chevron-up'></span>".html_safe, class: 'downvote' %>
+  <% end %>
 <% else %>
-  <%= link_to :upvote, upvotes_path(post_id: post.id), method: :post, remote: true %>
+  <%= form_for([post, post.upvotes.build], remote: true) do |f| %>
+    <%= f.button "<span class='glyphicon glyphicon-chevron-up'></span>".html_safe, class: 'upvote' %>
+  <% end %>
 <% end %>

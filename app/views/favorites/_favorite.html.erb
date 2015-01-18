@@ -1,5 +1,9 @@
-<% if favored?(post_id) %>
-  <%= link_to :favored, favorite_path(get_favorite(post_id)), method: :delete, remote: true %>
+<% if favored?(post) %>
+  <%= form_for([post, get_favorite(post)], method: :delete, remote: true) do |f| %>
+    <%= f.button "<span class='glyphicon glyphicon-star'></span>".html_safe %>
+  <% end %>
 <% else %>
-  <%= link_to :favor, favorites_path(post_id: post_id), method: :post, remote: true %>
+  <%= form_for([post, post.favorites.build], remote: true) do |f| %>
+    <%= f.button "<span class='glyphicon glyphicon-star-empty'></span>".html_safe %>
+  <% end %>
 <% end %>

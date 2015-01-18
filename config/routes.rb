@@ -13,10 +13,12 @@ Rails.application.routes.draw do
   end
 
   resources :users, except: :new
-  resources :posts, only: [:create, :show, :update, :destroy]
-  resources :favorites, only: [:create, :destroy]
-  resources :upvotes, only: [:create, :destroy]
-  resources :downvotes, only: [:create, :destroy]
+  resources :posts, only: [:create, :show, :update, :destroy] do
+    resources :upvotes, only: [:create, :destroy]
+    resources :downvotes, only: [:create, :destroy]
+    resources :favorites, only: [:create, :destroy]
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
