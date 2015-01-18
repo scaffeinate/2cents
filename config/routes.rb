@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   unauthenticated :user do
     root 'welcome#index'
   end
+
+  resources :users, except: :new
+  resources :posts, only: [:create, :show, :update, :destroy]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
