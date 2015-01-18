@@ -1,2 +1,2 @@
-$("#vote-downvote-<%= @post.id %>").html("<%= escape_javascript render('partials/vote_downvote', post: @post) %>");
+$("#upvote-downvote-<%= @post.id %>").html("<%=j render('partials/upvote_downvote', post: @post) %>");
 $("#vote-count-<%= @post.id %>").html("<%= @post.votes_count %>");

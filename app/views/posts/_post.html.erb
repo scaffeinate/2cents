@@ -12,8 +12,8 @@
     <%= relative_time(post.created_at) %>
   </div>
   <div class="col-lg-12">
-    <div id="vote-downvote-<%= post.id %>">
-      <%= render 'partials/vote_downvote', post: post %>
+    <div id="upvote-downvote-<%= post.id %>">
+      <%= render 'partials/upvote_downvote', post: post %>
     </div>
     <div id="favor-post-<%= post.id %>">
       <%= render 'favorites/favorite', post: post %>
