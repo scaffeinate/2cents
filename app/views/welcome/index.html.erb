@@ -1,30 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top login-page" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#twocents-navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Two Cents</a>
-    </div>
-    <div class="collapse navbar-collapse" id="twocents-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a class="navbar-link" href="#">About Us</a></li>
-        <li><a class="navbar-link" href="#">Contact</a></li>
-        <li><a class="navbar-link" href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
-        <li>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#loginModal">Sign In</a>
-            </div>
-          </form>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<%= render 'partials/navbar_login', transparent: true %>
 <div class="container login-image">
   <div class="row">
     <div class="col-md-12">

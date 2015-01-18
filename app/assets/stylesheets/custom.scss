@@ -1,3 +1,19 @@
+.alert-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-left: 40%;
+  margin-top: 10px;
+  width: 300px;
+  z-index: 10000;
+  text-align: center;
+  padding: 5px 25px;
+}
+
+.page-content {
+  margin-top: 75px;
+}
+
 .login-page{
 	background-color: rgba(42,64,80,0.6);
 	border: 0px;
