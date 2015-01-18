@@ -1,6 +1,6 @@
-<div class="post">
+<div id="post-<%= post.id %>" class="post">
   <div class= "well">
-    <div id="post-<%= post.id %>" class="row">
+    <div class="row">
       <div class="col-md-1">
         <div id="upvote-downvote-<%= post.id %>">
           <%= render 'partials/upvote_downvote', post: post %>
@@ -10,6 +10,7 @@
         <h4><%= link_to post.content, post_path(post) %></h4>
       </div>
       <div class="col-md-2">
+        <%= render 'posts/delete_post', post: post %>
         <div id="favor-post-<%= post.id %>">
           <%= render 'favorites/favorite', post: post %>
         </div>

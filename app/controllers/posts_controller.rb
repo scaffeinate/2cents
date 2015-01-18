@@ -31,6 +31,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post_id = params[:id]
     @post.destroy
     respond_to do |format|
       format.js
