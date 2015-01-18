@@ -18,13 +18,25 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     @post = @comment.post
-    @comment.destroy
+    @comment.update(comment_params)
     respond_to do |format|
       format.js
     end
   end
 
   def destroy
+    @comment_id = params[:id]
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @comment.destroy
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  private
+  def comment_params
+    params.require(:comment).permit(:content)
   end
 
 end

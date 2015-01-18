@@ -25,8 +25,10 @@ Rails.application.routes.draw do
     resources :upvotes, only: [:create, :destroy]
     resources :downvotes, only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create]
   end
+
+  resources :comments, only: :destroy
 
   resources :categories, only: :create do
     get :autocomplete_category_name, on: :collection

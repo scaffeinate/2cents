@@ -9,6 +9,7 @@
     <%= comment.content %>
   </div>
   <div class="col-md-2">
+    <%= render 'comments/delete_comment', comment: comment %>
     <%= relative_time(comment.created_at) %>
   </div>
 </div>
