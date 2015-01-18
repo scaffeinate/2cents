@@ -9,7 +9,9 @@
     <%= comment.content %>
   </div>
   <div class="col-md-2">
-    <%= render 'comments/delete_comment', comment: comment %>
+    <% if current_user == comment.user %>
+      <%= render 'comments/delete_comment', comment: comment %>
+    <% end %>
     <%= relative_time(comment.created_at) %>
   </div>
 </div>

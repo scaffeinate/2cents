@@ -49,11 +49,13 @@
                 </div>
               </div>
               <hr>
+              <h4>Comments</h4>
+              <hr>
               <div id="comments">
-                <h4>Comments</h4>
-                <hr>
-                <%= render(@comments) || "No Comments" %>
+                <%= render(@comments) || "<div id='no-comments' class='text-center'>No Comments</div>".html_safe %>
               </div>
+              <br>
+              <br>
               <%= render 'partials/new_comment', post: @post %>
             </div>
           </div>
