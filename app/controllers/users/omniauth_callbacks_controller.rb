@@ -12,7 +12,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     auth = request.env["omniauth.auth"]
     user = User.find_for_oauth(auth)
     authentication = Authentication.from_omniauth(auth, user)
-    session[:user_id] = user.id
+    sign_in(user)
     redirect_to root_url
   end
 end

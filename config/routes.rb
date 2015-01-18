@@ -3,13 +3,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  # You can have the root of your site routed with "root"
-  root 'welcome#index'
-
 
   authenticated :user do
     root to: "home#index", as: "home"
   end
+
   unauthenticated :user do
     root 'welcome#index'
   end
