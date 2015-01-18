@@ -12,7 +12,14 @@ Rails.application.routes.draw do
     root 'welcome#index'
   end
 
-  resources :users, except: :new
+  resources :users, except: :new do
+    member do
+      get 'two-cents'
+      get 'favorites'
+      get 'upvotes'
+      get 'downvotes'
+    end
+  end
   resources :posts, only: [:create, :show, :update, :destroy] do
     resources :upvotes, only: [:create, :destroy]
     resources :downvotes, only: [:create, :destroy]

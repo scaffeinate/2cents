@@ -4,6 +4,11 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    @posts = @user.posts.paginate(page: params[:page]).order('created_at DESC')
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def update
@@ -16,6 +21,30 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def favorites
+    @favorites = @user.posts.joins(:favorites).paginate(page: params[:page]).order('created_at DESC')
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
+  def upvotes
+    @upvotes = @user.posts.joins(:upvotes).paginate(page: params[:page]).order('created_at DESC')
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
+  def downvotes
+    @downvotes = @user.posts.joins(:downvotes).paginate(page: params[:page]).order('created_at DESC')
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   private
