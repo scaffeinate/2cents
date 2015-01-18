@@ -1,19 +1,32 @@
-<%= form_for @user do |f| %>
-  <div class="form-group">
-    <%= f.text_field :username, class: 'form-control', placeholder: 'username' %>
-  </div>
-  <div class="form-group">
-    <%= f.text_field :location, class: 'form-control', placeholder: 'Location' %>
-  </div>
-  <% if @user.has_random_password? %>
-    <div class="form-group">
-      <%= f.password_field :password, class: 'form-control', placeholder: 'password' %>
+<%= render 'partials/navbar_login', transparent: false %>
+<div class="page-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well">
+          <h3>Complete your profile</h3>
+          <hr>
+          <%= form_for @user do |f| %>
+            <div class="form-group">
+              <%= f.text_field :username, class: 'form-control', placeholder: 'username' %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :location, class: 'form-control', placeholder: 'Location' %>
+            </div>
+            <% if @user.has_random_password? %>
+              <div class="form-group">
+                <%= f.password_field :password, class: 'form-control', placeholder: 'password' %>
+              </div>
+              <div class="form-group">
+                <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm Password' %>
+              </div>
+            <% end %>
+            <div class="form-group">
+              <%= f.submit :complete, class: 'btn btn-primary' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm Password' %>
-    </div>
-  <% end %>
-  <div class="form-group">
-    <%= f.submit :complete, class: 'btn btn-primary' %>
   </div>
-<% end %>
+</div>

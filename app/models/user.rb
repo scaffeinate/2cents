@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   validates :first_name, presence: true, length: { maximum: 100 }
   validates :last_name, presence: true, length: { maximum: 100 }
+  validates :username, presence: true, length: { maximum: 20 }, :uniqueness => { case_sensitive: false }
 
   mount_uploader :avatar, AvatarUploader
 

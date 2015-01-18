@@ -10,17 +10,9 @@
       <%= link_to 'TwoCents', root_path, class: 'navbar-brand' %>
     </div>
     <div class="collapse navbar-collapse" id="twocents-navbar">
-      <div class="nav navbar-nav navbar-left">
-        <form class="navbar-form" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" style="width: 450px;">
-          </div>
-        </form>
-      </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="navbar-link" href="#" title="Notification"><span class="glyphicon glyphicon-globe"></span></a></li>
         <% if user_signed_in? %>
-          <li><%= link_to "<span class='glyphicon glyphicon-log-out'></span>".html_safe, destroy_user_session_path, method: :delete, class: 'navbar-link' %></li>
+          <li><%= link_to "<span class='glyphicon glyphicon-log-out'></span> Logout".html_safe, destroy_user_session_path, method: :delete, class: 'navbar-link' %></li>
         <% end %>
       </ul>
     </div>
