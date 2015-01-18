@@ -1,7 +1,15 @@
-<div id="comment-<%= comment.id %>">
-  <%= link_to user_path(comment.user) do %>
-    <%= render 'partials/avatar', user: comment.user, klass: 'avatar' %>
-  <% end %>
-  <%= comment.content %>
-  <%= relative_time(comment.created_at) %>
+<div id="comment-<%= comment.id %>" class="row">
+  <div class="col-md-2">
+    <%= link_to user_path(comment.user) do %>
+      <%= render 'partials/avatar', user: comment.user, klass: 'avatar-sm' %>
+    <% end %>
+  </div>
+  <div class="col-md-8">
+    <b>@<%= comment.user.username %></b><br>
+    <%= comment.content %>
+  </div>
+  <div class="col-md-2">
+    <%= relative_time(comment.created_at) %>
+  </div>
 </div>
+<br>
